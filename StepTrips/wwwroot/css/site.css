@@ -1,0 +1,31 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+.bg-green {
+    background-color: green; /* Set the green background color */
+}
+
+/* Red background when TripStatusId is not 1 */
+.bg-red {
+    background-color: red; /* Set the red background color */
+}
+
+/* Text color */
+.text-white {
+    color: white; /* Set text color to white */
+}

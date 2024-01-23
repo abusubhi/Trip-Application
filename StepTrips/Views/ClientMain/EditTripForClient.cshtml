@@ -1,0 +1,70 @@
+﻿@model StepTrips.DataContract.Model.TripReservation
+
+@{
+    ViewData["Title"] = "AddTripForClient";
+}
+
+<h1>AddTripForClient</h1>
+
+<h4>TripReservation</h4>
+<hr />
+<body>
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="EditTripForClient">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Id" class="control-label"></label>
+                <input asp-for="Id" class="form-control" readonly />
+                <span asp-validation-for="Id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TripId" class="control-label"></label>
+                <input asp-for="TripId" class="form-control" readonly />
+                <span asp-validation-for="TripId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ClientId" class="control-label"></label>
+                <input asp-for="ClientId" class="form-control" />
+                <span asp-validation-for="ClientId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PlaneId" class="control-label"></label>
+                <input asp-for="PlaneId" class="form-control" />
+                <span asp-validation-for="PlaneId" class="text-danger"></span>
+            </div>
+            @* <div class="form-group">
+                <label asp-for="TripStatusId" class="control-label"></label>
+                <input asp-for="TripStatusId" class="form-control" readonly />
+                <span asp-validation-for="TripStatusId" class="text-danger"></span>
+            </div> *@
+            <div class="form-group">
+                <label asp-for="CountryId" class="control-label"></label>
+                <input asp-for="CountryId" class="form-control"  readonly/>
+                <span asp-validation-for="CountryId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StatusId" class="control-label"></label>
+                <input asp-for="StatusId" class="form-control" readonly />
+                <span asp-validation-for="StatusId" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Paid" /> @Html.DisplayNameFor(model => model.Paid)
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="EditTripForClient" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

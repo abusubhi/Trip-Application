@@ -1,0 +1,14 @@
+C:\Users\moh\source\repos\StepTrips\StepTrips.DataContract\bin\Debug\net8.0\StepTrips.DataContract.deps.json
+C:\Users\moh\source\repos\StepTrips\StepTrips.DataContract\bin\Debug\net8.0\StepTrips.DataContract.runtimeconfig.json
+C:\Users\moh\source\repos\StepTrips\StepTrips.DataContract\bin\Debug\net8.0\StepTrips.DataContract.dll
+C:\Users\moh\source\repos\StepTrips\StepTrips.DataContract\bin\Debug\net8.0\StepTrips.DataContract.pdb
+C:\Users\moh\source\repos\StepTrips\StepTrips.DataContract\obj\Debug\net8.0\StepTrips.DataContract.csproj.AssemblyReference.cache
+C:\Users\moh\source\repos\StepTrips\StepTrips.DataContract\obj\Debug\net8.0\StepTrips.DataContract.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\moh\source\repos\StepTrips\StepTrips.DataContract\obj\Debug\net8.0\StepTrips.DataContract.AssemblyInfoInputs.cache
+C:\Users\moh\source\repos\StepTrips\StepTrips.DataContract\obj\Debug\net8.0\StepTrips.DataContract.AssemblyInfo.cs
+C:\Users\moh\source\repos\StepTrips\StepTrips.DataContract\obj\Debug\net8.0\StepTrips.DataContract.csproj.CoreCompileInputs.cache
+C:\Users\moh\source\repos\StepTrips\StepTrips.DataContract\obj\Debug\net8.0\StepTrips.DataContract.dll
+C:\Users\moh\source\repos\StepTrips\StepTrips.DataContract\obj\Debug\net8.0\refint\StepTrips.DataContract.dll
+C:\Users\moh\source\repos\StepTrips\StepTrips.DataContract\obj\Debug\net8.0\StepTrips.DataContract.pdb
+C:\Users\moh\source\repos\StepTrips\StepTrips.DataContract\obj\Debug\net8.0\StepTrips.DataContract.genruntimeconfig.cache
+C:\Users\moh\source\repos\StepTrips\StepTrips.DataContract\obj\Debug\net8.0\ref\StepTrips.DataContract.dll

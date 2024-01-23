@@ -1,0 +1,84 @@
+﻿@model StepTrips.DataContract.Model.Trip
+
+@{
+    ViewData["Title"] = "MyTrip";
+
+}
+
+@{
+    var tripReservation = ViewBag.TripReservation as StepTrips.DataContract.Model.TripReservation; // Assuming TripReservation model type
+}
+
+<!-- Your HTML content -->
+@if (Model != null && tripReservation != null)
+{
+    <h1>Trip Details</h1>
+    <p>Trip Name: @Model.TripFrom</p>
+    <!-- Access other Trip properties as needed -->
+
+    <h2>Trip Reservation Details</h2>
+    <p>Reservation ID: @tripReservation.Id</p>
+    <!-- Access other TripReservation properties as needed -->
+}
+else
+{
+    <p>No trip details found.</p>
+}
+
+<h1>MyTrip</h1>
+
+<div>
+    <h4>Trip</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Id)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Id)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Plane)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Plane)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TripFrom)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TripFrom)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TripTo)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TripTo)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TripCode)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TripCode)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TripTime)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TripTime)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PriceOfEconomy)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PriceOfEconomy)
+        </dd>
+        
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PriceOfBusiness)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PriceOfBusiness)
+        </dd>
+    </dl>
+</div>

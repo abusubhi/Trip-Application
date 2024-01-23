@@ -1,0 +1,14 @@
+﻿@model IEnumerable<string>
+
+@foreach (var action in Model)
+{
+    
+        <div class="card col-lg-4 col-md-3 col-sm-1" style="width: 18rem;">
+        
+        <div class="card-body">
+            <h5 class="card-title">@action</h5>
+            <a asp-action="@action" class="btn btn-primary">Go @action</a>
+        </div>
+    </div>
+}
+        

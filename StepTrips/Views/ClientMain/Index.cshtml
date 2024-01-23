@@ -1,0 +1,172 @@
+﻿@* @model IEnumerable<StepTrips.DataContract.DTOs.Client_DTOs.ReservationDTO>;
+ *@@using StepTrips.DataContract.Model;
+
+@{
+    var clientReservation = new StepTrips.DataContract.Model.ClientReservation(); 
+}
+
+
+
+@if (ViewBag.Register != null)
+
+    foreach (var item in ViewBag.Register)
+    {
+        <section class="vh-70">
+            <div class="container h-70">
+                <div class="row d-flex justify-content-center align-items-center h-70">
+                    <div class="col">
+                        <p><span class="h2"> </span><span class="h4">Trip @item.Id</span></p>
+                        <!--Card Section-->
+                        <div class="card mb-4">
+                            <div class="card-body p-4">
+
+                                <div class="row align-items-center">
+                                    <div class="col-md-1 d-flex justify-content-center mb-2">
+                                        <div>
+                                            <p class="small text-muted mb-1 pb-1">From</p>
+                                            <p class="lead fw-normal mb-1">
+                                                <i class="fas fa-circle me-1" style="color: #fdd8d2;"></i>
+                                                @item.TripFrom
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-1 d-flex justify-content-center mb-2">
+                                        <div>
+                                            <p class="small text-muted mb-1 pb-1">To</p>
+                                            <p class="lead fw-normal mb-1">@item.TripTo</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-md-2 d-flex justify-content-center mb-1">
+                                        <div>
+                                            <p class="small text-muted mb-1 pb-2">Date&Time</p>
+                                            <p class="small fw-normal mb-0">@item.TripTime</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 d-flex justify-content-center">
+                                        <div>
+                                            <p class="small text-muted mb-2 pb-2">Economy</p>
+                                            <p class="lead fw-normal mb-0">$ @item.PriceOfEconomy</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 d-flex justify-content-center">
+                                        <div>
+                                            <p class="small text-muted mb-1 pb-1">Business</p>
+                                            <p class="lead fw-normal mb-0">$ @item.PriceOfBusiness</p>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-1 d-flex justify-content-center">
+                                        <div>
+                                            <p class="small text-muted mb-1 pb-1">Seats</p>
+                                            <p class="lead fw-normal mb-0">@ViewBag.seatCalculation</p>
+
+                                        </div>
+                                    </div>
+                                        <div class="col-md-1 d-flex justify-content-center">
+                                            <div>
+                                                <p class="small text-muted mb-1 pb-1">Status</p>
+                                                <div class="d-flex align-items-center justify-content-center rounded-circle @(item.TripStatusId == 1 ? "bg-green" : "bg-red")" style="width: 50px; height: 50px;">
+                                                    <p class="lead fw-normal mb-0">@ViewBag.Status[item.TripStatusId -1].Name</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                    <div class="col-md-2 d-flex justify-content-center mb-1">
+                                        <div>
+                                            @if (item.TripStatusId != 1)
+                                            {
+                                                <button type="button" class="btn btn-primary" disabled>
+                                                    Create
+                                                </button>
+                                            }
+                                            else
+                                            {
+                                                <a asp-controller="ClientMain" asp-action="AddReservationForClient" type="submit" class="btn btn-primary">
+                                                    Create
+                                                </a>
+                                            }
+                                        </div>
+                                    </div>
+
+
+
+                                </div>
+
+                            </div>
+                        </div>
+                        <!--End Card Section-->
+                        
+
+                      
+
+                    </div>
+                </div>
+            </div>
+            
+        </section>
+    }
+        
+@* 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $('#openModalBtn').click(function () {
+            $('#exampleModal').modal('show');
+        });
+    });
+</script>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                $('#updateDataButton').click(function () {
+                    $.ajax({
+                        url: '/Controller/Action', // Replace with your controller and action names
+                        type: 'GET', // or 'POST' based on your needs
+                        success: function (data) {
+                            $('#dataContainer').html(data); // Replace the content in dataContainer
+                        },
+                        error: function () {
+                            console.error('Error fetching data.');
+                        }
+                    });
+                });
+            });
+        </script>
+    } *@
+ 
+
+
+@* <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal-">Continue Reservation</button>
+
+                        <div class="d-flex justify-content-end">
+                            <!--Modal Section-->
+                            <div class="modal" id="exampleModal-" tabindex="-1">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <!-- Modal content -->
+                                        <div>
+
+
+                                        <div class="modal-header">
+                                            <h5 class="modal-title">Reserving Trip</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true"></span>
+                                            </button>
+                                        </div>
+
+
+
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!--End Modal Section-->
+                        </div> *@
+
+
+

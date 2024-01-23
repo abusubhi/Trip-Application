@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - StepTrips</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/bootswatchtheme.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/StepTrips.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="light">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-controller="ClientMain" asp-action="Index">Step Trips</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarColor03">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" asp-controller="ClientMain" asp-action="Index">
+                                Home
+                                <span class="visually-hidden">(current)</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="ClientMain" asp-action="AddReservationForClient">Add Trip</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="ClientMain" asp-action="MyTrip" asp-route-id="1">My Trips</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" asp-controller="ClientMain" asp-action="Index">Client</a>
+                                <a class="dropdown-item" asp-controller="AdminMain" asp-action="Index">Admin</a>
+
+                                <!--This Is the Details-->
+@*                                 <form id="myForm" asp-action="MyTrip" method="get">
+                                    <label for="Id">Enter your ID:</label>
+                                    <input type="text" id="Id" name="Id" />
+                                    <input type="submit" value="Submit" id="submitBtn" />
+                                </form> *@
+
+                                <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+                                <script>
+                                    $(document).ready(function () {
+                                        $('#submitBtn').click(function (e) {
+                                            e.preventDefault(); // Prevents the form from submitting immediately
+
+                                            var enteredId = $('#Id').val();
+                                            alert("You entered: " + enteredId);
+
+                                            // Submit the form after showing the alert
+                                            $('#myForm').submit();
+                                        });
+                                    });
+                                </script>
+                                <!--This Is the Details-->
+
+                            </div>
+                        </li>
+                    </ul>
+                    <form class="d-flex">
+                        <input class="form-control me-sm-2" type="search" placeholder="Search">
+                        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+        
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2023 - StepTrips - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

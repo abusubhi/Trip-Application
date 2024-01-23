@@ -1,0 +1,26 @@
+﻿@model StepTrips.DataContract.Model.ClientReservation
+
+
+
+
+@using (Html.BeginForm("AddReservationForClient", "ClientMain", FormMethod.Post))
+{
+    <div class="form-group">
+        <label for="TripId" >Select Trip:</label>
+        @Html.DropDownListFor(model => model.TripId, ViewBag.TripList as SelectList, "Select Trip", new { @class = "form-control", style = "color: black;" })
+    </div>
+
+    <div class="form-group">
+        <label for="ClientId">Select Client:</label>
+        @Html.DropDownListFor(model => model.ClientId, ViewBag.ClientList as SelectList, "Select Client", new { @class = "form-control", style = "color: black;" })
+    </div>
+
+    <div class="form-group form-check">
+        <label class="form-check-label">
+            @Html.CheckBoxFor(model => model.Paid, new { @class = "form-check-input" })
+            <span>@Html.DisplayNameFor(model => model.Paid)</span>
+        </label>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Reserve Trip</button>
+}
